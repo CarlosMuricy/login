@@ -5,21 +5,16 @@ import { injectIntl } from 'react-intl'
 import { ButtonBehavior, GoogleOneTapAlignment } from './common/global'
 import { LoginSchema } from './schema'
 import { setCookie } from './utils/set-cookie'
-import { LoginContainerProptypes } from './propTypes'
+import { LoginContainerProptypes, LoginContainerDefaultProps } from './propTypes'
 import LoginComponent from './components/LoginComponent'
 import getSessionProfile from './utils/getSessionProfile'
-
-const DEFAULT_CLASSES = 'gray'
 
 /** Canonical login that calls a mutation to retrieve the authentication token */
 
 export default class Login extends Component {
   static propTypes = LoginContainerProptypes
 
-  static defaultProps = {
-    labelClasses: DEFAULT_CLASSES,
-    logInButtonBehavior: ButtonBehavior.POPOVER,
-  }
+  static defaultProps = LoginContainerDefaultProps
 
   state = {
     isBoxOpen: false,
